@@ -1,5 +1,6 @@
 {
-  "name": "react-vite-sample",
+  "name": "react-vite-re-rendering-sample",
+  "description": "Reactの再レンダリングのタイミングを見るサンプル",
   "private": true,
   "version": "0.0.0",
   "type": "module",
