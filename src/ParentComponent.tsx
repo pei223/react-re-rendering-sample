@@ -10,18 +10,20 @@ type Props = {
 
 export default function ParentComponent({messageFromRoot}: Props) {
     const [message, setMessage] = useState(messageFromRoot)
-    const [name, setName] = useState("")
-    const [age, setAge] = useState(0)
+    const [userData, setUserData] = useState({
+        name: "",
+        age: 1
+    })
 
-    console.log("Render ParendComponent", message, name, age)
+    console.log("Render ParendComponent", message, userData)
 
     return (
         <div style={{background: "gray", padding: "30px"}}>
             <h3 style={{borderBottom: "white 1px solid", margin: 0}}>Parent component</h3>
             <div style={{marginBottom: "30px"}}>
                 <div>Message: {message}</div>
-                <div>Name: {name}</div>
-                <div>Age: {age}</div>
+                <div>Name: {userData.name}</div>
+                <div>Age: {userData.age}</div>
             </div>
             <ChildComponent />
             <div style={{marginTop: "30px", padding: "5px", border: "white 1px solid"}}>
@@ -35,18 +37,16 @@ export default function ParentComponent({messageFromRoot}: Props) {
                 <div style={{marginBottom: "10px"}}>
                     <div>
                         <span>Name</span>
-                        <input value={name} onChange={(e) => setName(e.target.value)} />
+                        <input value={userData.name} onChange={(e) => setUserData({...userData, name: e.target.value})} />
                     </div>
                     <div>
                         <span>Age</span>
-                        <button onClick={() => setAge(age + 1)} >Add</button>
+                        <button onClick={() => setUserData({...userData, age: userData.age + 1})} >Add</button>
+                        <ChildComponentWithObjectProp data={
+                            userData
+                        } />
                     </div>
                 </div>
-                <ChildComponentWithObjectProp data={
-                    {
-                        age, name
-                    }
-                } />
             </div>
         </div>
     )

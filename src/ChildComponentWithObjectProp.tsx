@@ -18,6 +18,4 @@ export default React.memo(function ChildComponentWithObjectProp({data}: Props) {
             <div>Age: {data.age}</div>
         </div>
     )
-}, function(prev: Props, next: Props) {
-    return prev.data.name === next.data.name && prev.data.age === next.data.age
 })
