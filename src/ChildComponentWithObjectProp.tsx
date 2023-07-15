@@ -1,3 +1,5 @@
+import React from "react"
+
 type UserData = {
     name: string
     age: number
@@ -7,7 +9,7 @@ type Props = {
     data: UserData
 }
 
-export default function ChildComponentWithObjectProp({data}: Props) {
+export default React.memo(function ChildComponentWithObjectProp({data}: Props) {
     console.log("Render ChildComponentWithObjectProp", data)
     return (
         <div style={{background: "blue", padding: "10px"}}>
@@ -16,4 +18,4 @@ export default function ChildComponentWithObjectProp({data}: Props) {
             <div>Age: {data.age}</div>
         </div>
     )
-}
+})

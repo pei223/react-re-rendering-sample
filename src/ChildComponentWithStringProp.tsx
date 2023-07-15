@@ -1,8 +1,10 @@
+import React from "react"
+
 type Props = {
     message: string
 }
 
-export default function ChildComponentWithStringProp({ message }: Props) {
+export default React.memo(function ChildComponentWithStringProp({ message }: Props) {
     console.log("Render ChildComponentWithStringProp", message)
     return (
         <div style={{background: "green", padding: "10px"}}>
@@ -10,4 +12,4 @@ export default function ChildComponentWithStringProp({ message }: Props) {
             <div>Message: {message}</div>
         </div>
     )
-}
+})
