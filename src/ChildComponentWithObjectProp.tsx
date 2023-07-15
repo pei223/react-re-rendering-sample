@@ -11,9 +11,9 @@ export default function ChildComponentWithObjectProp({data}: Props) {
     console.log("Render ChildComponentWithObjectProp", data)
     return (
         <div style={{background: "blue", padding: "10px"}}>
-            <p>Child Component with object props</p>
-            <p>name: {data.name}</p>
-            <p>age: {data.age}</p>
+            <h3 style={{borderBottom: "white 1px solid", margin: 0}}>Child component with object prop</h3>
+            <div>Name: {data.name}</div>
+            <div>Age: {data.age}</div>
         </div>
     )
 }

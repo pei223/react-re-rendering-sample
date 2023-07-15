@@ -9,10 +9,13 @@ function App() {
 
   return (
     <div className="App" style={{
-      background: "gainsboro"
+      background: "silver",
+      padding: "10px 50px",
     }}>
-      <span>Message</span>
-      <input value={message} onChange={(e) => setMessage(e.target.value)} />
+      <div style={{marginBottom: "20px"}}>
+        <span>Message</span>
+        <input value={message} onChange={(e) => setMessage(e.target.value)} />
+      </div>
       <ParentComponent messageFromRoot={message} />
     </div>
   )
